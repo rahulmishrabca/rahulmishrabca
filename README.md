@@ -133,11 +133,19 @@ snapshot_v3)       │     └── S3 Parquet Export
 
 <div align="center">
 
-![Rahul's GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulmishrabca&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true)
+![Commits](https://img.shields.io/badge/Total_Commits-35+-1A5276?style=for-the-badge&logo=git&logoColor=white)
+![Repos](https://img.shields.io/badge/Public_Repos-5-2471A3?style=for-the-badge&logo=github&logoColor=white)
+![Profile Views](https://komarev.com/ghpvc/?username=rahulmishrabca&style=for-the-badge&color=0B1F3A&label=PROFILE+VIEWS)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulmishrabca&layout=compact&theme=tokyonight&hide_border=true)
+<br/>
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rahulmishrabca&theme=tokyonight&hide_border=true)
+[![GitHub Streak](https://streak-stats.demolab.com?user=rahulmishrabca&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D)](https://github.com/rahulmishrabca)
+
+<br/>
+
+[![Rahul's GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahulmishrabca&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github)](https://github.com/rahulmishrabca)
+&nbsp;
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahulmishrabca&layout=compact&theme=tokyonight&hide_border=true&langs_count=6)](https://github.com/rahulmishrabca)
 
 </div>
 
