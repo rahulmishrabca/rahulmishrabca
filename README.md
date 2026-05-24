@@ -83,7 +83,7 @@ I turn raw lending data into decisions that move the needle. My work sits at the
 ![AWS S3](https://img.shields.io/badge/AWS_S3-569A31?style=flat&logo=amazons3&logoColor=white)
 ![HDFS](https://img.shields.io/badge/HDFS-66CCFF?style=flat&logo=apachehadoop&logoColor=black)
 
-`PySpark (Optimization, Partitioning)` · `HiveQL (Partitioned Tables)` · `AWS EMR` · `AWS Glue (NoSQL ingestion)` · `Parquet / Snappy`
+`PySpark (Optimization, Repartitioning)` · `HiveQL (Partitioned Tables)` · `AWS EMR` · `AWS Glue Ingestion` · `Parquet / Snappy`
 
 ### 🔍 Query & Exploration
 ![Trino](https://img.shields.io/badge/Trino-DD00A1?style=flat&logo=trino&logoColor=white)
@@ -94,11 +94,11 @@ I turn raw lending data into decisions that move the needle. My work sits at the
 
 ### 🤖 AI & Automation
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude_Pro-CC785C?style=flat&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-CC785C?style=flat&logo=anthropic&logoColor=white)
 
-`LLM Pipelines (Claude Pro, Gemini Pro)` · `Agentic AI orchestration` · `Automated Slack alerting` · `GenAI for analytics productivity`
+`Anthropic API (Claude 3.5 Sonnet)` · `Google Gemini API` · `Agentic AI Orchestration` · `Automated Slack Alerting` · `GenAI for Analytics`
 
-### 📊 Business Intelligence
+### 📊 BI & Methodologies
 ![PowerBI](https://img.shields.io/badge/PowerBI-F2C811?style=flat&logo=powerbi&logoColor=black)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=flat&logo=tableau&logoColor=white)
 ![Looker](https://img.shields.io/badge/Looker-4285F4?style=flat&logo=looker&logoColor=white)
@@ -109,22 +109,27 @@ I turn raw lending data into decisions that move the needle. My work sits at the
 
 ## 🏗️ Data Pipeline Architecture
 
-```
-Raw Data Sources              Processing Layer           Output Layer
-─────────────────             ────────────────           ────────────
-NoSQL (Paytm App)  ──┐
-                      ├──► AWS Glue ──► Hive/S3 ──► Trino SQL ──► Dashboards
-Lending Events     ──┘                                           (Power BI /
-                                                                  Tableau)
-                      ┌──► AWS EMR (PySpark)
-                      │     ├── Predicate Pushdown
-Daily Snapshots    ───┤     ├── Repartition (600 partitions)
-(lead_history_     │     ├── HDFS Staging
-snapshot_v3)       │     └── S3 Parquet Export
-                      │
-                      └──► Trino on Hive ──► Funnel Reports
-                                          ──► Anomaly Alerts (Slack)
-                                          ──► Finance Validation
+```mermaid
+graph TD
+    classDef source fill:#1f2937,stroke:#374151,stroke-width:1px,color:#fff;
+    classDef process fill:#1e3a8a,stroke:#2563eb,stroke-width:1px,color:#fff;
+    classDef output fill:#064e3b,stroke:#059669,stroke-width:1px,color:#fff;
+
+    A[NoSQL Paytm App] --> D[AWS Glue]
+    B[Lending Events] --> D
+    C[Daily Snapshots] --> E[AWS EMR PySpark]
+    
+    D --> F[(Hive / S3)]
+    E -->|Predicate Pushdown| F
+    
+    F --> G[Trino SQL Engine]
+    
+    G --> H[Power BI / Tableau Dashboards]:::output
+    G --> I[Funnel Health Reports]:::output
+    G --> J[Slack Anomaly Alerts]:::output
+    
+    class A,B,C source;
+    class D,E,G process;
 ```
 
 ---
@@ -180,7 +185,7 @@ PySpark / Data Eng.        ████████████░░░░░�
 
 ## 🏆 Recognition
 
-> 🏅 **Legends Award** &nbsp;|&nbsp; ⭐ **Rock Star** (Multiple Years) &nbsp;|&nbsp; 🥇 **Leader Board Reward** &nbsp;|&nbsp; 🌟 **Hall of Fame**
+> 🏅 **Legends Award** &nbsp;\|&nbsp; ⭐ **Rock Star** (Multiple Years) &nbsp;\|&nbsp; 🥇 **Leader Board Reward** &nbsp;\|&nbsp; 🌟 **Hall of Fame**
 
 ---
 
@@ -192,7 +197,7 @@ PySpark / Data Eng.        ████████████░░░░░�
 |---|---|
 | 💼 LinkedIn | [linkedin.com/in/rkmisraofcl](https://linkedin.com/in/rkmisraofcl) |
 | 🐙 GitHub | [github.com/rahulmishrabca](https://github.com/rahulmishrabca) |
-| 📧 Email | rahul.mishrabca@gmail.com |
+| ✉️ Email | [rahul.mishrabca@gmail.com](mailto:rahul.mishrabca@gmail.com) |
 | 📍 Location | India |
 
 *"Without data, you're just another person with an opinion."*
